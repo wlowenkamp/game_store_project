@@ -1,4 +1,5 @@
 class Game:
+
     def __init__(self, title, genre, price):
         self.title = title
         self.genre = genre 
@@ -11,4 +12,4 @@ class Game:
 
 game1 = Game("Super Smash Brothers Brawl", "Fighting", 67.50)
 
-print(game1)
+print(game1.genre)
