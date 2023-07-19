@@ -1,10 +1,8 @@
 class Genre:
+    all = []
     def __init__(self, name):
         self.name = name
+        Genre.all.append(self)
 
-genres = [
-    Genre("Platform"),
-    Genre("Fighting"),
-    Genre("First Person Shooter"),
-    Genre("Action-Adventure"),
-]
+
+
