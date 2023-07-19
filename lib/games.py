@@ -1,24 +1,26 @@
 class Game:
-
-    def __init__(self, title, genre, price):
+    def __init__(self, title, genre, price, console):
         self.title = title
-        self.genre = genre 
+        self.genre = genre
         self.price = price
-    
+        self.console = console
+
     def display_details(self):
         print(f"Title: {self.title}")
         print(f"Genre: {self.genre}")
         print(f"Price: ${self.price}")
+        print(f"Console: {self.console}")
 
-game1 = Game("Super Smash Brothers Brawl", "Fighting", 67.50)
-game2 = Game("The Witcher 3: Wild Hunt", "Action role-playing", 59.99)
-game3 = Game("Red Dead Redemption 2", "Action-adventure", 49.99)
-game4 = Game("Fortnite", "Battle royale", 0.0)
-game5 = Game("Minecraft", "Sandbox", 26.95)
-game6 = Game("Overwatch", "First-person shooter", 39.99)
-game7 = Game("Grand Theft Auto V", "Action-adventure", 29.99)
-game8 = Game("The Legend of Zelda: Breath of the Wild", "Action-adventure", 59.99)
-game9 = Game("Call of Duty: Warzone", "Battle royale", 0.0)
-game10 = Game("FIFA 22", "Sports", 59.99)
+
+game1 = Game("Halo 3", "First-person shooter", 19.99, "Xbox 360")
+game2 = Game("Gears of War", "Third-person shooter", 14.99, "Xbox 360")
+game3 = Game("Mass Effect", "Action role-playing", 9.99, "Xbox 360")
+game4 = Game("Red Dead Redemption", "Action-adventure", 24.99, "Xbox 360")
+game5 = Game("BioShock", "First-person shooter", 12.99, "Xbox 360")
+game6 = Game("The Elder Scrolls V: Skyrim", "Action role-playing", 17.99, "Xbox 360")
+game7 = Game("Call of Duty: Modern Warfare 2", "First-person shooter", 9.99, "Xbox 360")
+game8 = Game("Fallout 3", "Action role-playing", 14.99, "Xbox 360")
+game9 = Game("Grand Theft Auto V", "Action-adventure", 19.99, "Xbox 360")
+game10 = Game("FIFA 14", "Sports", 7.99, "Xbox 360")
 
 
