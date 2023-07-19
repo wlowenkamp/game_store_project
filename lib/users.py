@@ -16,7 +16,10 @@ class User:
             self._name = new_name
         else:
             raise Exception( "Name must be a string." )
-       
+    
+    name = property( get_name, set_name )
+
+
 u1 = User("Will", "PS4")
 u2 = User("Robert", "PS5")
 u3 = User("Andrew", "XBOX One")
