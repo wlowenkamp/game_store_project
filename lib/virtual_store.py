@@ -56,20 +56,40 @@ def display_genres():
     for genre in [platform, fighting, first_person, action_adventure]:
         print(genre.name)
 
+def get_valid_console():
+    while True:
+        display_consoles()
+        user_console = input("\nPlease type a console: ")
+        console_names = [console.name.lower() for console in [xbox, playstation, nintendo]]
+        if user_console.lower() in console_names:
+            return user_console
+        else:
+            print("\nInvalid console name. Please choose from the available consoles.")
+
+def get_valid_genre():
+    while True:
+        display_genres()
+        user_genre = input("\nPlease type a genre: ")
+        genre_names = [genre.name.lower().replace("-", "_") for genre in [platform, fighting, first_person, action_adventure]]
+        if user_genre.lower() in genre_names:
+            return user_genre
+        else:
+            print("\nInvalid genre name. Please choose from the available genres.")
+
 def display_games(console_name, genre_name):
     console = globals()[console_name.lower()]
     genre = globals()[genre_name.lower().replace("-", "_")]
-    print(f"Games for {console_name} console in the {genre_name} genre:")
+    print(f"\nGames for {console_name} console in the {genre_name} genre:")
     for game in [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, g27, g28, g29, g30, g31, g32, g33]:
         if game.console == console and game.genre == genre:
             print(game.title)
 
 def run_store():
     print("\nWelcome to Games R Us!")
-    display_consoles()
-    user_console = input("\nPlease type a console: ")
-    display_genres()
-    user_genre = input("\nPlease type a genre: ")
+    # display_consoles()
+    user_console = get_valid_console()
+    # display_genres()
+    user_genre = get_valid_genre()
     display_games(user_console, user_genre)
 
     selected_game = None
@@ -94,5 +114,32 @@ def run_store():
             choice = input ("\nInvald input. Press 'a' to select a new game, or press 'x' to exit: ")
 
     print("\nThanks for stopping by!")
+    print("""
+┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+███▀▀▀██┼███▀▀▀███┼███▀█▄█▀███┼██▀▀▀
+██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼█┼┼┼██┼██┼┼┼
+██┼┼┼▄▄▄┼██▄▄▄▄▄██┼██┼┼┼▀┼┼┼██┼██▀▀▀
+██┼┼┼┼██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██┼┼┼
+███▄▄▄██┼██┼┼┼┼┼██┼██┼┼┼┼┼┼┼██┼██▄▄▄
+┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+███▀▀▀███┼▀███┼┼██▀┼██▀▀▀┼██▀▀▀▀██▄┼
+██┼┼┼┼┼██┼┼┼██┼┼██┼┼██┼┼┼┼██┼┼┼┼┼██┼
+██┼┼┼┼┼██┼┼┼██┼┼██┼┼██▀▀▀┼██▄▄▄▄▄▀▀┼
+██┼┼┼┼┼██┼┼┼██┼┼█▀┼┼██┼┼┼┼██┼┼┼┼┼██┼
+███▄▄▄███┼┼┼─▀█▀┼┼─┼██▄▄▄┼██┼┼┼┼┼██▄
+┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼██┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼████▄┼┼┼▄▄▄▄▄▄▄┼┼┼▄████┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼▀▀█▄█████████▄█▀▀┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼┼█████████████┼┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼┼██▀▀▀███▀▀▀██┼┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼┼██┼┼┼███┼┼┼██┼┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼┼█████▀▄▀█████┼┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼┼┼███████████┼┼┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼▄▄▄██┼┼█▀█▀█┼┼██▄▄▄┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼▀▀██┼┼┼┼┼┼┼┼┼┼┼██▀▀┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼▀▀┼┼┼┼┼┼┼┼┼┼┼
+┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼┼
+""")
 
 run_store()
